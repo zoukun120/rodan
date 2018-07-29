@@ -14,11 +14,11 @@ public class DataService {
     @Autowired
     private DataMapper dataMapper;
 
-    public List<KF0002> getData(String startTime,String endTime){
+    public List<KF0002> getData(String tableName,String startTime, String endTime) {
         System.out.println("服务！！！");
         startTime += " 00:00:00";
         endTime += " 00:00:00";
-        List<KF0002> datasByTime = dataMapper.findDatasByTime(startTime, endTime);
-        return  datasByTime;
+        List<KF0002> datasByTime = dataMapper.findDatasByTime(tableName,startTime, endTime);
+        return datasByTime;
     }
 }

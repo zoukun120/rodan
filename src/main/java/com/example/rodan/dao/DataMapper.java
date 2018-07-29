@@ -13,6 +13,6 @@ import java.util.Map;
 @Repository
 public interface DataMapper {
 
-    @Select("select * from KF0002 WHERE TIME BETWEEN #{startTime} AND #{endTime}  ORDER BY TIME")
-    List<KF0002> findDatasByTime(@Param("startTime") String startTime, @Param("endTime") String endTime);
+    @Select("select * from ${tableName} WHERE TIME BETWEEN #{startTime} AND #{endTime}  ORDER BY TIME")
+    List<KF0002> findDatasByTime(@Param("tableName") String tableName,@Param("startTime") String startTime, @Param("endTime") String endTime);
 }
